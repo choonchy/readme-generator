@@ -3,20 +3,20 @@ const fs = require('fs')
 const inquirer = require('inquirer')
 const generateMarkdown = require('./utils/generateMarkdown')
 
+
 // Array of license types
 
 const licenseTypes = [
     "This project has no license",
-    "Apache License 2.0",
-    "BSD 3-Clause \"New\" or \"Revised\" license",
-    "BSD 2-Clause \"Simplified\" or \"FreeBSD\" license",
-    "GNU General Public License (GPL)",
-    "GNU Library or \"Lesser\" General Public License (LGPL)",
-    "MIT license",
-    "Mozilla Public License 2.0",
-    "Common Development and Distribution License",
-    "Eclipse Public License version 2.0"
+    "Apache-2.0",
+    "BSD-3-Clause",
+    "GPL-2.0 (or later)",
+    "LGPL-3.0",
+    "MIT",
+    "MPL-2.0",
+    "EPL-1.0"
 ]
+
 
 // Array of prompt objects for Inquirer to use
 
@@ -73,9 +73,10 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
-        err ? console.log(err) : console.log('Success!')
-    );
+
+    fs.writeFile(`./generated-files/${fileName} README.md`, generateMarkdown(data), (err) => {
+        err ? console.error(err) : console.log("README successfully created!")
+    })
 }
 
 // TODO: Create a function to initialize app
@@ -83,9 +84,7 @@ function init() {
     inquirer
         .prompt(questions)
     .then(answers => {
-        return fs.writeFile("./generated-files/README.md", generateMarkdown(answers), () => {
-            console.log("README successfully created!")
-        })
+        writeToFile(answers.title, answers)
     })
     .catch(err => {
         console.log(err)

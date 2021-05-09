@@ -1,10 +1,10 @@
-# README Generator
+# Random
 
-  
+  [![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
   ## Description
 
-  This application generates a README markdown file based on user input.
+  It does stuff
 
   ## Table of Contents
 
@@ -30,22 +30,23 @@
 
   ## Usage
 
-  Using the CLI, respond to the prompts with information about your project. Your responses will be used to fill a README template.
+  You do things with it
 
   ## License
 
-  This project does not use any license.
+  This project is using the GPL-2.0 (or later) license.
+  A copy of the GPL-2.0 (or later)'s terms can be found [here](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
   ## Contribution
 
-  Anyone may contrubute to this project, however any contributions must either be forked or made on a branch other than main.
+  Do whatever
 
   ## Tests
 
   You can run tests using the following command:
 
   ```
-  There are no test commands for this project
+  There is no test for this
   ```
 
   ## Questions
